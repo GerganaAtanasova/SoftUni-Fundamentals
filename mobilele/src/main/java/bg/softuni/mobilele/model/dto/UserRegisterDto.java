@@ -2,6 +2,7 @@ package bg.softuni.mobilele.model.dto;
 
 public class UserRegisterDto {
 
+    private String email;
     private String firstName;
     private String lastName;
     private String password;
@@ -37,5 +38,13 @@ public class UserRegisterDto {
 
     public void setConfirmPassword(String confirmPassword) {
         this.confirmPassword = confirmPassword;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
