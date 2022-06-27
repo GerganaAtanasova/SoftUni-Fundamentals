@@ -9065,4 +9065,16 @@ a.text-dark:focus, a.text-dark:hover {
     .table-bordered td, .table-bordered th {
         border: 1px solid #ddd !important
     }
+
+    .registration-form small.bg-danger {
+        color:  white;
+        background: red;
+    }
+
+    .registration-form small.bg-danger.rounded{
+        color:  white;
+        background: red;
+    }
+
+
 }
