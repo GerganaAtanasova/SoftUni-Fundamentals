@@ -1,9 +1,8 @@
 package bg.softuni.mobilele.model.entity;
 
-import bg.softuni.mobilele.model.entity.enums.CategoryEnum;
+import bg.softuni.mobilele.model.enums.CategoryEnum;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "models")
