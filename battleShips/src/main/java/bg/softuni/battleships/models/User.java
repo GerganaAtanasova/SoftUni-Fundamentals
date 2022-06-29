@@ -2,13 +2,11 @@ package bg.softuni.battleships.models;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import java.util.List;
 
 @Entity
 @Table(name = "users")
-public class UserEntity extends BaseEntity {
+public class User extends BaseEntity {
 
     @Column(nullable = false,unique = true)
     private String username;
@@ -22,10 +20,7 @@ public class UserEntity extends BaseEntity {
     @Column(nullable = false,unique = true)
     private String email;
 
-    @OneToMany
-    private List<ShipEntity> ships;
-
-    public UserEntity() {
+    public User() {
     }
 
     public String getUsername() {
@@ -58,13 +53,5 @@ public class UserEntity extends BaseEntity {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public List<ShipEntity> getShips() {
-        return ships;
-    }
-
-    public void setShips(List<ShipEntity> ships) {
-        this.ships = ships;
     }
 }

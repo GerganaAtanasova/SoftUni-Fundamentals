@@ -1,6 +1,6 @@
 package bg.softuni.battleships.models.enums;
 
-public enum CategoryNameEnum {
+public enum ShipType {
     BATTLE,
     CARGO,
     PATROL

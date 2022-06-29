@@ -8,7 +8,7 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "ships")
-public class ShipEntity extends BaseEntity{
+public class Ship extends BaseEntity{
 
     @Column(unique = true,nullable = false)
     private String name;
@@ -23,12 +23,12 @@ public class ShipEntity extends BaseEntity{
     private LocalDate created;
 
     @ManyToOne
-    private CategoryEntity category;
+    private Category category;
 
     @ManyToOne
-    private UserEntity user;
+    private User user;
 
-    public ShipEntity() {
+    public Ship() {
     }
 
     public String getName() {
@@ -63,19 +63,19 @@ public class ShipEntity extends BaseEntity{
         this.created = created;
     }
 
-    public CategoryEntity getCategory() {
+    public Category getCategory() {
         return category;
     }
 
-    public void setCategory(CategoryEntity category) {
+    public void setCategory(Category category) {
         this.category = category;
     }
 
-    public UserEntity getUser() {
+    public User getUser() {
         return user;
     }
 
-    public void setUser(UserEntity user) {
+    public void setUser(User user) {
         this.user = user;
     }
 }
