@@ -70,6 +70,7 @@ public class UserService {
         this.currentUser
                 .setLoggedIn(true);
         this.currentUser.setName(userEntity.getFirstName() + " " + userEntity.getLastName());
+        this.currentUser.setEmail(userEntity.getEmail());
     }
 
     public void logout() {
