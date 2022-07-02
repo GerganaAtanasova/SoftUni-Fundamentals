@@ -66,8 +66,12 @@ public class AuthController {
             return "redirect:/login";
         }
 
+        if (!this.authService.login(userLoginDto)){
+            redirectAttributes.addFlashAttribute("userLoginDto", userLoginDto);
+            redirectAttributes.addFlashAttribute("badCredentials", true);
 
-
+            return "redirect:/login";
+        }
         return "redirect:/home";
     }
 }
