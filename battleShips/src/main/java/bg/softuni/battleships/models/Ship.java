@@ -26,7 +26,7 @@ public class Ship extends BaseEntity{
     private Category category;
 
     @ManyToOne
-    private UserEntity userEntity;
+    private User user;
 
     public Ship() {
     }
@@ -71,11 +71,11 @@ public class Ship extends BaseEntity{
         this.category = category;
     }
 
-    public UserEntity getUser() {
-        return userEntity;
+    public User getUser() {
+        return user;
     }
 
-    public void setUser(UserEntity userEntity) {
-        this.userEntity = userEntity;
+    public void setUser(User user) {
+        this.user = user;
     }
 }

@@ -1,6 +1,6 @@
 package bg.softuni.battleships.services;
 
-import bg.softuni.battleships.models.UserEntity;
+import bg.softuni.battleships.models.User;
 import bg.softuni.battleships.mapper.UserMapper;
 import bg.softuni.battleships.models.dto.UserLoginDto;
 import bg.softuni.battleships.models.dto.UserRegistrationDto;
@@ -30,23 +30,23 @@ public class AuthService {
             return false;
         }
 
-        Optional<UserEntity> byEmail = this.userRepository.findByEmail(registrationDto.getEmail());
+        Optional<User> byEmail = this.userRepository.findByEmail(registrationDto.getEmail());
         if (byEmail.isPresent()){
             return false;
         }
 
-        Optional<UserEntity> byUsername = this.userRepository.findByUsername(registrationDto.getUsername());
+        Optional<User> byUsername = this.userRepository.findByUsername(registrationDto.getUsername());
         if (byUsername.isPresent()){
             return false;
         }
 
-        UserEntity userEntity = userMapper.userRegisterDtoToUserEntity(registrationDto);
-        this.userRepository.save(userEntity);
+        User user = userMapper.userRegisterDtoToUserEntity(registrationDto);
+        this.userRepository.save(user);
         return true;
     }
 
     public boolean login(UserLoginDto userLoginDto) {
-        Optional<UserEntity> user = this.userRepository.findByUsernameAndPassword(userLoginDto.getUsername(), userLoginDto.getPassword());
+        Optional<User> user = this.userRepository.findByUsernameAndPassword(userLoginDto.getUsername(), userLoginDto.getPassword());
         if (user.isEmpty()){
             return false;
         }

@@ -1,6 +1,6 @@
 package bg.softuni.battleships.session;
 
-import bg.softuni.battleships.models.UserEntity;
+import bg.softuni.battleships.models.User;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.annotation.SessionScope;
 
@@ -8,16 +8,16 @@ import org.springframework.web.context.annotation.SessionScope;
 @SessionScope
 public class LoggedUser {
 
-    private Long id;
+    private long id;
 
     private String fullName;
 
     public void logout(){
-        this.id = null;
+        this.id = 0;
         this.fullName = null;
     }
 
-    public void login(UserEntity user){
+    public void login(User user){
         this.id = user.getId();
         this.fullName = user.getFullName();
     }
